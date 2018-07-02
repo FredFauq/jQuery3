@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" >
+  <head>
+    <meta charset="utf-8" />
+    <script src="jquery-3.2.1.js"></script>
+    <title>Exercice 1 JQuery3</title>
+  </head>
+  <body>
+    <input type="button" id="counter" value= '0'>
+    <script>
+    $(document).ready(function(){
+      var count = 0;
+      $('#counter').click(function(){
+        count++;
+        $('#counter').val(count);
+      });
+    });
+    </script>
+    </body>
+</html>

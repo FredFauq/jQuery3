@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 4 JQuery3</title>
+</head>
+<body>
+  <style>
+  #rectangle {
+    height: 10px;
+    width: 20px;
+    padding: 10px;
+    margin: 3px;
+    border: 1px solid black;
+    background-color: blue;
+  }
+  </style>
+  <button type="button" id="button1" >Hauteur +10</button>
+  <button type="button" id="button2" >Couleur verte</button>
+  <button type="button" id="button3" >Couleur initiale</button>
+  <button type="button" id="button4" >Efface le rectangle</button>
+  <button type="button" id="button5" >Affiche le rectangle</button>
+  <div id='rectangle'></div>
+  <script src="jquery-3.2.1.js"></script>
+  <script>
+  var startColor = $('#rectangle').css('background-color');
+  $(document).ready(function(){
+    $('#button1').click(function(){
+      var h = parseInt($('#rectangle').css('height'));
+      h += 10;
+      if ( h == 100) {
+        h = 10;
+      }
+      $('#rectangle').css('height',h);
+    });
+    $('#button2').click(function(){
+      $('#rectangle').css('background-color' , 'green');
+    });
+    $('#button3').click(function(){
+      $('#rectangle').css('background-color' , startColor);
+    });
+    $('#button4').click(function(){
+      $('#rectangle').hide();
+    });
+    $('#button5').click(function(){
+      $('#rectangle').show();
+    });
+  });
+  </script>
+</body>
+</html>

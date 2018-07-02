@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  <title>Exercice 3 JQuery3</title>
+</head>
+<body>
+  <div>
+    <p>Devinez un nombre entre 0 et 100</p>
+    <input type="value" id="value" />
+    <button id='try'>Essayez !</button>
+  </div>
+  <script src="jquery-3.2.1.js"></script>
+  <script>
+    //Définition des variables
+     var rdm = Math.floor(Math.random() * 100)+1;
+     var tryNum = 0;
+     var reg = /^[0-9][0-9]?$|^100$/;
+     //Déclaration de fonction
+      $('#try').click(function() {
+        var value = $('#value').val() // Récupération du nombre saisi
+        tryNum++;// Compteur +1
+      if(reg.test(value) && reg.test(rdm)) { // Test Regex de 0 à 100
+          if(value == rdm) { // Vérification des conditions
+          $('p').text('Bravo, vous avez réussi en '+ tryNum + ' coups !');
+          } else if(value < rdm){
+          $('p').text('C\'est plus');
+          } else {
+          $('p').text('C\'est moins');
+      }
+    }else {
+        alert('Entrez un nombre valide, SVP.');
+       }
+       });
+  </script>
+  </body>
+  </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr" >
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercice 2 JQuery3</title>
+    </head>
+  <body>
+    <input type="button" id="buttonP" value= "+"></input>
+    <input type="button" id="buttonM" value= "-"></input>
+    <div id= "counter"></div>
+    <script src="jquery-3.2.1.js"></script>
+    <script>
+    $(document).ready(function(){
+      var count = 0;
+      $('#buttonP').click(function(){
+        count++;
+        $('#counter').html(count);
+      });
+        $('#buttonM').click(function(){
+        count--;
+        $('#counter').html(count);
+      });
+    });
+    </script>
+    </body>
+</html>
